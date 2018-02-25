@@ -14,7 +14,7 @@ $ source geetest/bin/activate
 # 先创建数据库
 (venv) $ python createdb.py
 
-
+# 运行
 (venv) $ python api.py
 * Running on http://127.0.0.1:5000/
 ```
@@ -22,7 +22,7 @@ $ source geetest/bin/activate
 nginx和Supervisor配置文件都在项目里面。
 
 
-###### api接口
+##### api接口
 
 注册接口
 
@@ -45,7 +45,9 @@ token登录
     "duration": 259200,
     "token": "eyJhbGciOiJIUzI1NiIsImlhdCI6MTUxOTUyOTk0OSwiZXhwIjoxNTE5Nzg5MTQ5fQ.eyJpZCI6NX0.VcRL_WGtefmTheU9AM7VZ5KRqrlgKgO1vXqzPswdX-Q"
 }
-
+# 用token登录
+>>> http -a eyJhbGciOiJIUzI1NiIsImlhdCI6MTUxOTUyOTk0OSwiZXhwIjoxNTE5Nzg5MTQ5fQ.eyJpZCI6NX0.VcRL_WGtefmTheU9AM7VZ5KRqrlgKgO1vXqzPswdX-Q:x  http://127.0.0.1:5000/login
+{"msg": "Hello, liuhuan!"}
 ```
 
 获取登录用户信息接口
